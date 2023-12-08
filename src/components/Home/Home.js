@@ -9,7 +9,9 @@ const HomePage = () => {
         <div>
             <header className="header">
                 <h1>مرحباً في رؤية</h1>
-                <p>عايز جملة طويله فيها حوالي 12 كلمة عشان شكلها يبقي حلو</p>
+                <p>
+"يُعَدّ هذا الموقع وجهة رائدة لاستكشاف العلوم الإسلامية بلغة سهلة وواضحة. يقدم محتوى شامل يشمل القرآن والسنة وتعاليم الصحابة بأسلوب سلس، يُسهم في فهم عميق للتعاليم الدينية. يُعَزز التواصل الفعّال مع المعلومات، جعله مصدراً قيماً للتعلم والتثقيف الإسلامي."
+ </p>
             </header>
 
             <section class="home" id="home">
@@ -32,7 +34,32 @@ const HomePage = () => {
                     <h1 className='heading'>الأقسام</h1>
                     <div className="category-cards">
                         {/* Add category cards here */}
-                        
+                        <div class="cards">
+                            <div class="card card-1">
+                                <div class="card__icon"><i class="fa fa-book"></i></div>
+                                <p class="card__exit"><i class="fas fa-times"></i></p>
+                                <h2 class="card__title">كتب في السيرة النبويه والأحاديث الشريفه</h2>
+                                <p class="card__apply">
+                                    <a class="card__link" href="#">shop now <i class="fas fa-arrow-right"></i></a>
+                                </p>
+                            </div>
+                            <div class="card card-2">
+                                <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                                <p class="card__exit"><i class="fas fa-times"></i></p>
+                                <h2 class="card__title">كتب عن الصحابه وتعاليمهم القيمة</h2>
+                                <p class="card__apply">
+                                    <a class="card__link" href="#">shop Now <i class="fas fa-arrow-right"></i></a>
+                                </p>
+                            </div>
+                            <div class="card card-3">
+                                <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                                <p class="card__exit"><i class="fas fa-times"></i></p>
+                                <h2 class="card__title">كتب في تفسير القرآن الكريم </h2>
+                                <p class="card__apply">
+                                    <a class="card__link" href="#">shop Now <i class="fas fa-arrow-right"></i></a>
+                                </p>
+                            </div>
+                        </div>
                        
                     </div>
                 </section>
@@ -46,18 +73,16 @@ const HomePage = () => {
                     <div className="featured-items">
                         {/* Add featured content here */}
 
-                        <div class="single-item">
+                        <div class="single-item" id ='single'>
                             <div class="left-set">
-                            <img src="image/5" alt="" />
+                            <img  className='imag1' src={require('../../image/5.webp')}alt="" />
                             </div>
                             <div class="right-set">
                                 <div class="name"><h1>لأنك اللَه</h1></div>
-                                <div class="subname">رحلة إلى السماء السابعة</div>
-                                <div class="price">65 EGP</div>
+                                <div class="subname">علي بن جابر الفيفي</div>
+                                <div class="price">105 EGP</div>
                                 <div class="description">
-                                    <p>
-                                    كتاب يتحدث عن بعض أسماء الله الحسنى وكيف نعيشها في حياتنا حرص المؤلف أن يكون الكتاب مناسباً لمن هم متوسطي الثقافة، ويكون ناسباً للمحتاج و المريض و السليم                                    </p>
-                                </div>
+                                   </div>
                                 {/* <div class="color">
                                 <ul>
                                     <li></li>
@@ -70,22 +95,16 @@ const HomePage = () => {
 
 
 
-                        <div class="single-item">
+                        <div class="single-item"  id ='single'>
                             <div class="left-set">
-                                <img className='imag1' src="http://images.nike.com/is/image/DotCom/PDP_HERO_S/NIKE-YA-LEBRON-MAX-AIR-BP-BA5124_660_A.jpg" alt="" />
+                                <img className='imag1' src={require('../../image/8.png')}alt="" />
                             </div>
                             <div class="right-set">
                                 <div class="name"><h1> مع النبي</h1></div>
-                                <div class="subname">صلى اللَه عليه وسلم</div>
-                                <div class="price">75 EGP</div>
+                                <div class="subname">أدهم الشرقاوي</div>
+                                <div class="price">85 EGP</div>
                                 <div class="description">
-                                    <p>
-                                   !الحِكايةُ أدبٌ جميل فكيف إذا كانتْ في حضرة نبيّ ؟
-                                    والإصغاءُ لها ماتعٌ فكيف إذا كان راويها سيّدُ الأولين والآخرين ؟
-                                   هُنا حَكايا لا تُشبه الحَكايا لأنّ راويها لا يُشبه الرّواة !
-                                    و الذي ما ضلَّ وما غوَى وما نطقَ يوماً عن هوَى " علّمه شديدُ القُوَى " فجاءنا بحديثٍ " إنْ هو إلا وحيٌ يُوحَى
-                                    </p>
-                                </div>
+                                      </div>
                                 {/* <div class="color">
                                 <ul>
                                     <li></li>
@@ -104,14 +123,27 @@ const HomePage = () => {
 
 
 
+                      <section>
+                        <h2>About Us</h2>
+                        <p>
+                         </p>
+                    </section>
 
-                <section className="about-section">
-                    <h1 className='heading'>About Us</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisi id varius ultrices,
-                        arcu felis facilisis arcu, vel malesuada metus leo non nibh. Nulla facilisi.
-                    </p>
-                </section>
+                    <section>
+                        </section>
+  
+
+
+                <footer>
+                <h2>Our Team</h2>
+                        <p>
+Rahaf Mamdouh   </p>
+                        <p>
+Marwa Rabiea    </p>
+                   
+                </footer>
+
+
 
             </div >
         </div >
