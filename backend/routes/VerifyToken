@@ -1,0 +1,47 @@
+const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+
+    const authHeader = req.headers.authorization;
+    console.log("here --- 1")
+    console.log(authHeader)
+    if (authHeader?.startsWith("Bearer")) {
+        const token = authHeader.split(" ")[1];
+        console.log(token)
+        jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
+            console.log(user)
+            console.log(err)
+            if (err) { res.status(403).json("Token is not valid!") };
+            req.user = user;
+            next();
+        })
+    } else {
+        return res.status(401).json("You are not authonicated");
+    }
+}
+//Checking if can make changes
+const verifyTokenAndAuthorization = (req, res, next) => {
+    verifyToken(req, res, () => {
+        if (req.user.id === req.params.id || req.user.role) {
+            next()
+        } else {
+            res.status(403).json("You can not make that change");
+        }
+    })
+}
+//Check if an admin
+const verifyTokenAndAdmin = (req, res, next) => {
+    if(!req.user){
+        res.status(401).json({
+            message:"you are not logged in"
+        })
+    }
+    if (req.user.role === "admin") {
+        next()
+    } else {
+        res.status(403).json("You are not an admin");
+    }
+}
+module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin };
+
+
